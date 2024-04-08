@@ -10,7 +10,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from config import settings
+from src.config import settings
 from src.database import connect_database
 from src.routes.products import product_route
 

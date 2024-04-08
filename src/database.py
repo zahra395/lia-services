@@ -1,7 +1,7 @@
 from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 
-from config import settings
+from src.config import settings
 from src.models.models import Product
 
 
