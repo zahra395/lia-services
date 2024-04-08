@@ -1,7 +1,9 @@
 import uvicorn
 import logging
 
+from pydantic import ValidationError
 from starlette.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 from pymongo.errors import ServerSelectionTimeoutError, PyMongoError
 
 from fastapi import FastAPI, Request
@@ -51,6 +53,15 @@ async def database_connection_error_handler(request: Request, exc: DatabaseConne
         status_code=500,
         content={"error": "Database connection error", "detail": str(exc)},
     )
+
+
+@app.exception_handler(ValidationError)
+async def validation_exception_handler(request, exc):
+    return JSONResponse(
+        status_code=422,
+        content=jsonable_encoder({"detail": exc.errors()}),
+    )
+
 
 app.include_router(product_route, prefix="")
 if __name__ == "__main__":
