@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from config import settings
 from src.database import connect_database
+from src.routes.products import product_route
 
 logger = logging.getLogger()
 
@@ -51,6 +52,6 @@ async def database_connection_error_handler(request: Request, exc: DatabaseConne
         content={"error": "Database connection error", "detail": str(exc)},
     )
 
-
+app.include_router(product_route, prefix="")
 if __name__ == "__main__":
     uvicorn.run(app=app, host="0.0.0.0", port=8001)
