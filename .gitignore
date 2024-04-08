@@ -1,0 +1,21 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# PyCharm
+.idea/
+
+
+# MongoDB data
+data/
+
+# Logs
+*.log
+
+# Environment variables
+.env
