@@ -65,4 +65,4 @@ async def validation_exception_handler(request, exc):
 
 app.include_router(product_route, prefix="")
 if __name__ == "__main__":
-    uvicorn.run(app=app, host="0.0.0.0", port=8001)
+    uvicorn.run(app=app, host="0.0.0.0", port=8000)
