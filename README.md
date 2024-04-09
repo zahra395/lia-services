@@ -16,8 +16,8 @@ docker-compose up
 ## Usage
 
 To use the project, you can use these URLs.
-- **Automatic Interactive Docs (Swagger UI)**: [Swagger UI](https://fastapi-template-project.com/docs)
-- **Automatic Alternative Docs (ReDoc)**: [ReDoc](https://fastapi-template-project.com/redoc)
+- **Automatic Interactive Docs (Swagger UI)**: [Swagger UI](http://0.0.0.0:8000/docs)
+- **Automatic Alternative Docs (ReDoc)**: [ReDoc](http://0.0.0.0:8000/redoc)
 
 
 ## Code Structure
